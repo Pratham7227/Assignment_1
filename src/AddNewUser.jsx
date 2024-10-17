@@ -24,16 +24,20 @@ const AddNewUser = ({userData,setUserData}) => {
             
             <label className='' htmlFor='firstname'>FIRST_NAME</label>
             <input type='text' id='firstname' className='p-1 font-normal rounded-sm' {...register('first_name',{required:true})}/>
+            {errors.first_name && <p className='text-red-600'>Enter Firstname please</p>}
           
 
             <label htmlFor='lastname'>LAST_NAME</label>
             <input type='text' id='lastname'className='p-1 font-normal rounded-sm' {...register('last_name',{required:true})}/>
+            {errors.last_name && <p className='text-red-600'>Enter Firstname please</p>}
 
             <label htmlFor='username'>USERNAME</label>
             <input type='text'id='username'className='p-1 font-normal rounded-sm' {...register("username",{required:true})}/>
+            {errors.username && <p className='text-red-600'>Enter Firstname please</p>}
 
             <label htmlFor='age' >AGE</label>
             <input type='text'id='age' className='p-1 font-normal rounded-sm' {...register("age",{required:true})}/>
+            {errors.age && <p className='text-red-600'>Enter Firstname please</p>}
            
            <div className='flex gap-2 flex-wrap'>
            <label>MARITAL_STATUS :</label>
@@ -42,6 +46,7 @@ const AddNewUser = ({userData,setUserData}) => {
               UN-MARRIED<input type='radio' name='Maritial_status' value={'unmarried'} {...register('marital_status',{required:true})}/>
             </div>
            </div>
+           {errors.marital_status && <p className='text-red-600'>This is required</p>}
              
 
 
@@ -52,6 +57,7 @@ const AddNewUser = ({userData,setUserData}) => {
             NO<input type='radio' name='is_employed'value={false} {...register('is_employed',{required:true})}/>
             </div>
             </div>
+            {errors.is_employed && <p className='text-red-600'>This is required</p>}
             
             <div className='flex gap-2 flex-wrap'>
             <label>IS_FOUNDER :</label>
@@ -60,6 +66,7 @@ const AddNewUser = ({userData,setUserData}) => {
               NO<input type='radio' name='is_founder'value={false} {...register('is_founder',{required:true})}/>
             </div>
             </div>
+            {errors.is_founder && <p className='text-red-600'>This is required</p>}
             <button onClick={handleSubmit(handleUserData)} className='bg-yellow-500 p-1'>Add New User</button>
             </div>
  </div>
